@@ -22,57 +22,6 @@ importers:
       turbo: 1.5.5
       typescript: 4.9.3
 
-  apps/admin:
-    specifiers:
-      '@tanstack/react-query': ^4.16.1
-      '@trpc/client': ^10.1.0
-      '@trpc/next': ^10.1.0
-      '@trpc/react-query': ^10.1.0
-      '@trpc/server': ^10.1.0
-      '@types/node': ^18.0.0
-      '@types/react': ^18.0.25
-      '@types/react-dom': ^18.0.9
-      '@vmix/api': '*'
-      '@vmix/auth': '*'
-      '@vmix/db': '*'
-      '@vmix/tailwind-config': '*'
-      autoprefixer: ^10.4.13
-      eslint: ^8.28.0
-      eslint-config-next: 13.0.4
-      next: ^13.0.5
-      next-auth: ^4.17.0
-      postcss: ^8.4.19
-      react: 18.2.0
-      react-dom: 18.2.0
-      tailwindcss: ^3.2.4
-      typescript: ^4.9.3
-      zod: ^3.18.0
-    dependencies:
-      '@tanstack/react-query': 4.18.0_biqbaboplfbrettd7655fr4n2y
-      '@trpc/client': 10.1.0_@trpc+server@10.1.0
-      '@trpc/next': 10.4.2_i3smijmlsf3vygga3aani4vcy4
-      '@trpc/react-query': 10.4.2_7cskqtm6oefzzahrc5lykgivda
-      '@trpc/server': 10.1.0
-      '@vmix/api': link:../../packages/api
-      '@vmix/auth': link:../../packages/auth
-      '@vmix/db': link:../../packages/db
-      '@vmix/tailwind-config': link:../../packages/config/tailwind
-      next: 13.0.5_biqbaboplfbrettd7655fr4n2y
-      next-auth: 4.17.0_7iuvftg57tblwyxclfkwku5xo4
-      react: 18.2.0
-      react-dom: 18.2.0_react@18.2.0
-      zod: 3.19.1
-    devDependencies:
-      '@types/node': 18.8.0
-      '@types/react': 18.0.25
-      '@types/react-dom': 18.0.9
-      autoprefixer: 10.4.13_postcss@8.4.19
-      eslint: 8.28.0
-      eslint-config-next: 13.0.4_hsf322ms6xhhd4b5ne6lb74y4a
-      postcss: 8.4.19
-      tailwindcss: 3.2.4_postcss@8.4.19
-      typescript: 4.9.3
-
   apps/web:
     specifiers:
       '@tanstack/react-query': ^4.16.1
