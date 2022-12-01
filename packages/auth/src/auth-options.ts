@@ -1,5 +1,5 @@
 import { type NextAuthOptions } from "next-auth";
-import DiscordProvider from "next-auth/providers/discord";
+import GithubProvider from "next-auth/providers/github";
 
 import { prisma } from "@vmix/db";
 import { PrismaAdapter } from "@next-auth/prisma-adapter";
@@ -8,18 +8,34 @@ export const authOptions: NextAuthOptions = {
   // Configure one or more authentication providers
   adapter: PrismaAdapter(prisma),
   providers: [
-    DiscordProvider({
-      clientId: process.env.DISCORD_CLIENT_ID as string,
-      clientSecret: process.env.DISCORD_CLIENT_SECRET as string,
+    GithubProvider({
+      clientId: process.env.GITHUB_CLIENT_ID || "",
+      clientSecret: process.env.GITHUB_CLIENT_SECRET || "",
+      profile(profile) {
+        console.log("profile", profile);
+        return {
+          id: String(profile.id),
+          name: profile.name || profile.login,
+          username: profile.login,
+          email: profile.email,
+          // image: profile.avatar_url,
+        };
+      },
     }),
-    // ...add more providers here
   ],
+  secret: process.env.NEXTAUTH_SECRET || "",
   callbacks: {
-    session({ session, user }) {
-      if (session.user) {
-        session.user.id = user.id;
-      }
-      return session;
+    session: ({ session, user }) => {
+      console.log("session", session);
+      console.log("user", user);
+      return {
+        ...session,
+        user: {
+          ...session.user,
+          id: user.id,
+          username: user.username,
+        },
+      };
     },
   },
 };
