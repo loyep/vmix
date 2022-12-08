@@ -1,7 +1,7 @@
 import { type NextAuthOptions } from "next-auth";
 import GithubProvider from "next-auth/providers/github";
 
-import { prisma } from "@vmix/db";
+import { prisma } from "@vmix/prisma";
 import { PrismaAdapter } from "@next-auth/prisma-adapter";
 
 export const authOptions: NextAuthOptions = {

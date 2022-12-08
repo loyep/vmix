@@ -1,5 +1,5 @@
 import { getServerSession, type Session } from "@vmix/auth";
-import { prisma } from "@vmix/db";
+import { prisma } from "@vmix/prisma";
 import { type inferAsyncReturnType } from "@trpc/server";
 import { type CreateNextContextOptions } from "@trpc/server/adapters/next";
 

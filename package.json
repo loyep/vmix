@@ -2,6 +2,10 @@
   "name": "vmix",
   "private": true,
   "packageManager": "pnpm@7.13.0",
+  "workspaces": [
+    "packages/**",
+    "apps/*"
+  ],
   "scripts": {
     "build": "turbo build",
     "clean": "rm -rf node_modules",
